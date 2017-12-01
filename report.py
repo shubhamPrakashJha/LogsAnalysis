@@ -28,7 +28,12 @@ print("\n\n2. The most popular authors of all time are:\n")
 for i in range(len(results2)):
     print("\t"+str(i+1)+". \""+results2[i][0]+"\" -- "+str(results2[i][1])+" views")
 
-
+# executing most_error query and storing the result table in result3
+cursor.execute("select * from most_errors")
+results3 = cursor.fetchall()
+print("\n\n3. Days on which more than 1% of the requests lead to error are:\n")
+for i in range(len(results3)):
+    print("\t"+str(i+1)+". "+results3[i][0]+" -- "+str(results3[i][1])+"% errors")
 
 
 
