@@ -38,4 +38,5 @@ for i in range(len(results3)):
 # decorator at the end of the report
 print("\n"+"="*65)
 
-
+# closing the connection from database
+connection.close()
