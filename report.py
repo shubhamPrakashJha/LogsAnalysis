@@ -10,6 +10,9 @@ connection = psycopg2.connect(database=DBNAME)
 # create cursor
 cursor = connection.cursor()
 
+# decorator at the beginning of report
+print("="*65)
+print("\n" + " "*20 + " NEWS ANALYSIS REPORT\n")
 
 
 
