@@ -2,7 +2,7 @@
 by Shubham Prakash
 
 ## About
-A **Newspaper Site's** **_internal reporting tool_** that will use information from the _database_ to discover what kind of _articles_ the site's _readers like_.
+A **Newspaper Site's** **_internal reporting tool_** that will use information from the live _database_ with over a **million rows** to discover what kind of _articles_ the site's _readers like_ to _draw business conclusions_ from data using both from the command line and the python code.
 
 ![output screenshot](img/report.png)
 
