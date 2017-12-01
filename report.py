@@ -21,7 +21,12 @@ print("\n1. The most popular three articles of all time are:\n")
 for i in range(3):
     print("\t"+str(i+1)+". \""+results1[i][0]+"\" -- "+str(results1[i][1])+" views")
 
-
+# executing popular_authors query and storing the result table in result2
+cursor.execute("select * from popular_authors")
+results2 = cursor.fetchall()
+print("\n\n2. The most popular authors of all time are:\n")
+for i in range(len(results2)):
+    print("\t"+str(i+1)+". \""+results2[i][0]+"\" -- "+str(results2[i][1])+" views")
 
 
 
