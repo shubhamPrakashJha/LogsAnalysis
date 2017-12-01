@@ -7,7 +7,8 @@ DBNAME = "news"
 # connect to database
 connection = psycopg2.connect(database=DBNAME)
 
-
+# create cursor
+cursor = connection.cursor()
 
 
 
