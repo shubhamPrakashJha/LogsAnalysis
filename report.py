@@ -12,7 +12,7 @@ cursor = connection.cursor()
 
 # decorator at the beginning of report
 print("="*65)
-print("\n" + " "*20 + " NEWS ANALYSIS REPORT\n")
+print("\n" + " "*20 + "NEWS ANALYSIS REPORT\n")
 
 # executing popular_articles query and storing the result table in result1
 cursor.execute("select * from popular_articles")
