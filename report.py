@@ -35,5 +35,7 @@ print("\n\n3. Days on which more than 1% of the requests lead to error are:\n")
 for i in range(len(results3)):
     print("\t"+str(i+1)+". "+results3[i][0]+" -- "+str(results3[i][1])+"% errors")
 
+# decorator at the end of the report
+print("\n"+"="*65)
 
 
