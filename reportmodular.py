@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 # import psycopg2 to use postgres sql
 import psycopg2
 
@@ -17,9 +16,9 @@ def db_connect():
         connection = psycopg2.connect(database=dbname)
     except psycopg2.Error:
         print("-"*29 + "warning" + "-"*29 +
-              "\n can not find news database,"
-              " database might not set up properly."
-              "\n\n Please refer \'how to setup database\'"
+              "\n can not find news database," +
+              " database might not set up properly." +
+              "\n\n Please refer \'how to setup database\'" +
               " in README file for help.\n")
         exit()
     # create cursor
@@ -66,7 +65,7 @@ def print_errors_over_one():
     query = "select * from most_errors"
     results = execute_query(query)
 
-    print("\n\n3. Days on which more than 1% of "
+    print("\n\n3. Days on which more than 1% of " +
           "the requests lead to error are:\n")
     for i in range(len(results)):
         print('\t{}. {} -- {}% error'

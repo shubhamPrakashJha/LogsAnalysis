@@ -158,3 +158,23 @@ Views cant be created by two methods: i.e. automatic or manually
     ```commandline
        python3 reportmodular.py
     ```
+
+## ISSUE
+
+If command `./reportmodular.py`  gives error
+```commandline
+$ ./reportmodular.py
+env: python\r: No such file or directory
+```
+It is actually caused by irregular line-break ending of the reportmodular.py file.
+
+This can be easily fixed by using a nifty utility called dos2unix
+
+Since I’m using `Ubuntu` with HomeBrew installed, I can do the following:
+```commandline
+$ sudo apt install dos2unix
+$ dos2unix manage.py
+dos2unix: converting file manage.py to Unix format...
+````
+
+And just like that, now we can run the file directly without it ever complaining that it can’t find Python.
