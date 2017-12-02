@@ -7,6 +7,7 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 ![output screenshot](img/report.png)
 
 ## REQUIREMENTS
+
 1. [**VirtualBox**](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1), software that will run your virtual machine
 
 2. [**VAGRANT**](https://www.vagrantup.com/), the Linux-based virtual machine (VM)
@@ -21,7 +22,7 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 
 1. Install vagrant, to install you can check the below link. This will give you the PostgreSQL database and support software needed for this project
 
-    [Instructions to install the vagrant virtual machine](https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0)
+    [Instructions to install the vagrant virtual machine](https://www.udacity.com/wiki/ud088/vagrant)
     
     ![vagrantver](img/vagrantVer.png)
 
@@ -55,7 +56,7 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 	 cd /vagrant
 	```
 
-8. use the command(use it only once)
+8. load the data from `newsdata.sql` to `news` _database_ and cd into the vagrant directory using the command
 	```sql
 	 psql -d news -f newsdata.sql
 	```
@@ -124,7 +125,7 @@ To successfully run the `report.py` file in the repository we need to create vie
         ```
         ```
         create view most_errors as
-            select to_char(day,'Month DD, YYYY') as day, perc_error 
+            select to_char(day,'FMMonth DD, YYYY') as day, perc_error 
             from avg_error
             where perc_error > 1.00
             order by perc_error;
