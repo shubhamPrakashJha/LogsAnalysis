@@ -11,7 +11,7 @@ def db_connect():
     """
     global cursor
     # database name
-    dbname = "new"
+    dbname = "news"
     # connect to database
     try:
         connection = psycopg2.connect(database=dbname)
