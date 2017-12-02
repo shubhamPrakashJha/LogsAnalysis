@@ -91,6 +91,11 @@ Views cant be created by two methods: i.e. automatic or manually
 	```commandline
 	 psql -d news -f create_views.sql
     ```
+    
+if in case you want to delete views from `news` _database_
+```commandline
+psql -d news -f dropviews.sql
+```
 
 ##### Method 2: manually
 - Select 'news' database in psql using
