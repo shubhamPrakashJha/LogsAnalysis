@@ -20,6 +20,6 @@
 
 3. Days on which more than 1% of the requests lead to error are:
 
-        1. December  01, 2017 -- 2.26% errors
+        1. July      17, 2016 -- 2.26% error
 
 =================================================================
