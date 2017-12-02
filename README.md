@@ -7,51 +7,65 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 ![output screenshot](img/report.png)
 
 ## REQUIREMENTS
-1. This project makes use of **VAGRANT**, a Linux-based virtual machine (VM)
+1. [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1), software that will run your virtual machine
 
-2. `newsdata.sql` file. 
+2. [**VAGRANT**](https://www.vagrantup.com/), the Linux-based virtual machine (VM)
 
-3. Clone the repository `Logs Analysis` in the `/vagrant`  directory shared with your virtual machine
+3. `newsdata.sql` file. 
 
-4. Recreate `views` in the `news` _database_ as shown below.
+4. Clone the repository `Logs Analysis` in the `/vagrant`  directory shared with your virtual machine
+
+5. Recreate `views` in the `news` _database_ as shown below.
 
 ## HOW TO SETUP DATABASE
 
 1. Install vagrant, to install you can check the below link. This will give you the PostgreSQL database and support software needed for this project
 
-    [Instructions to install the vagrant virtual machine](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+    [Instructions to install the vagrant virtual machine](https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0)
+    
+    [vagrantver](img/vagrantVer.png)
 
-2. After installing vagrant, Bring the virtual machine back online using
+2. Download the Virtual Machine configuration file and unzip it.This will give you a directory called FSND-Virtual-Machine. Change to this directory in your terminal with cd. Inside, you will find another directory called vagrant. Change directory to the vagrant directory.
+    
+    [FSND-Virtual-Machine.zip](https://d17h27t6h515a5.cloudfront.net/topher/2017/August/59822701_fsnd-virtual-machine/fsnd-virtual-machine.zip)
+    
+    [vagrantConfig](img/vmconfig.png)
+
+3. After installing vagrant, Bring the virtual machine back online using
 	```
 	 vagrant up
 	```
-3. log into it using `vagrant up` to Successfully logged into the virtual machine
+	[vagrantUp](img/vagrantup.png)
+
+4. log into it using `vagrant up` to Successfully logged into the virtual machine
 	```
 	 vagrant ssh
 	```
-
- 4. download `newsdata.sql` file.
+    [vagrantSSH](img/vagrantssh.png)
  
-    [ download newsdata.sql file here](https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0)
+5. download `newsdata.sql` file.
+ 
+    [ download newsdata.sql file here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
-5. unzip this file and Put this file into the `vagrant directory` shared with your virtual machine
+6. unzip this file and Put this file into the `vagrant directory` shared with your virtual machine
 
 
-6. now cd into the vagrant directory
+7. now cd into the vagrant directory
 	```
 	 cd /vagrant
 	```
 
-7. use the command(use it only once)
-	```
+8. use the command(use it only once)
+	```sql
 	 psql -d news -f newsdata.sql
 	```
-8. connect to postgreSQL using command(for rest of the time)
-	```angular2html
+
+9. connect to postgreSQL using command(for rest of the time)
+	```postgresql
 	 psql
 	```
-9. select the news database using
-	```angular2html
+10. select the news database using
+	```postgresql
 	 \c news
 	```
     now you will be connected to the news database which have three tables i.e `authors`, `articles`,`log`.
