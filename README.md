@@ -17,42 +17,42 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 
 ## HOW TO SETUP DATABASE
 
-To install vagrant you can check below link. This will give you the PostgreSQL database and support software needed for this project
+1. To install vagrant you can check below link. This will give you the PostgreSQL database and support software needed for this project
 
 [Instructions to install the vagrant virtual machine](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
-After installing vagrant, Bring the virtual machine back online using
+2. After installing vagrant, Bring the virtual machine back online using
 ```
     vagrant up
 ```
-log into it using `vagrant up` to Successfully logged into the virtual machine
+3. log into it using `vagrant up` to Successfully logged into the virtual machine
 ```
     vagrant ssh
 ```
 
- download `newsdata.sql` file.
+ 4. download `newsdata.sql` file.
  
  
 
 [ download newsdata.sql file here](https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0)
 
-unzip this file and Put this file into the vagrant directory shared with your virtual machine
+5. unzip this file and Put this file into the vagrant directory shared with your virtual machine
 
 
-now cd into the vagrant directory
+6. now cd into the vagrant directory
 ```
  cd /vagrant
 ```
 
-use the command(use it only once)
+7. use the command(use it only once)
 ```
  psql -d news -f newsdata.sql
 ```
-connect to postgreSQL using command(for rest of the time)
+8. connect to postgreSQL using command(for rest of the time)
 ```angular2html
  psql
 ```
-select the news database using
+9. select the news database using
 ```angular2html
  \c news
 ```
