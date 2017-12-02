@@ -23,7 +23,7 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 
     [Instructions to install the vagrant virtual machine](https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0)
     
-                                ![vagrantver](img/vagrantVer.png)
+    ![vagrantver](img/vagrantVer.png)
 
 2. Download the Virtual Machine configuration file and unzip it.This will give you a directory called FSND-Virtual-Machine. Change to this directory in your terminal with cd. Inside, you will find another directory called vagrant. Change directory to the vagrant directory.
     
