@@ -52,17 +52,17 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 
 
 7. now cd into the vagrant directory
-	```
+	```commandline
 	 cd /vagrant
 	```
 
 8. load the data from `newsdata.sql` to `news` _database_ and cd into the vagrant directory using the command
-	```sql
+	```commandline
 	 psql -d news -f newsdata.sql
 	```
 
 9. connect to postgreSQL using command(for rest of the time)
-	```postgresql
+	```commandline
 	 psql
 	```
 	![psql](img/psql.png)
@@ -78,13 +78,13 @@ To successfully run the `report.py` file in the repository we need to create vie
 
 #### To recreate the views:
 - Select 'news' database in psql using
-    ```angular2html
+    ```commandline
     psql news
     ```
 - Copy and run the below query commands:
     
     1. To create popular_artist view for second question.
-        ```angular2html
+        ```sql
         create view popular_articles as
     	    select title, count(*) as views
     	    from log join articles
@@ -94,7 +94,7 @@ To successfully run the `report.py` file in the repository we need to create vie
     	    limit 3;
         ```
     2. To create popular_articles view for first question.
-        ```angular2html
+        ```sql
         create view popular_authors as
     	    select authors.name, count(*) as views
     	    from articles,authors,log
@@ -103,27 +103,27 @@ To successfully run the `report.py` file in the repository we need to create vie
     	    order by status, views desc;
         ```
     3. To create most_errors view for third question.
-        ```angular2html
+        ```sql
         create view all_error as
             select cast(time as date) as day, count(*) as error 
             from(select * from log where status like '404%') as tab 
             group by day 
             order by day;
         ```
-        ```
+        ```sql
         create view all_request as
             select cast(time as date) as day, count(*) as request 
             from log 
             group by day 
             order by day;
         ```
-        ```
+        ```sql
         create view avg_error as
             select all_error.day,request,error,round(100.0*error/request,2) as perc_error
             from all_request,all_error
             where all_request.day = all_error.day;
         ```
-        ```
+        ```sql
         create view most_errors as
             select to_char(day,'FMMonth DD, YYYY') as day, perc_error 
             from avg_error
@@ -135,10 +135,10 @@ To successfully run the `report.py` file in the repository we need to create vie
 2. Initialize the Vagrant using `vagrant up`.
 3. Connect to virtual machine `vagrant ssh`.
 4. navigate to Logs analysis directory
-    ```angular2html
+    ```commandline
         cd /vagrant/LogsAnalysis
     ```
 5. run the python application.
-    ```angular2html
-       python3 report.py
+    ```commandline
+       python3 reportmodular.py
     ```
