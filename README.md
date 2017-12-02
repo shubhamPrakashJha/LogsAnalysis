@@ -72,7 +72,7 @@ To successfully run the `report.py` file in the repository we need to create vie
     create view popular_articles as
 	    select title, count(*) as views
 	    from log join articles
-	    on log.path like concat('%',articles.slug) 
+	    on log.path = concat('/article/',articles.slug) 
 	    group by title 
 	    order by views desc
 	    limit 3;
@@ -83,7 +83,7 @@ To successfully run the `report.py` file in the repository we need to create vie
     create view popular_authors as
 	    select authors.name, count(*) as views
 	    from articles,authors,log
-	    where articles.author = authors.id and log.path like concat('%',articles.slug)
+	    where articles.author = authors.id and log.path = concat('/article/',articles.slug)
 	    group by authors.name
 	    order by views desc;
 
