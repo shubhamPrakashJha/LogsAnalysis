@@ -23,11 +23,11 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 
 2. After installing vagrant, Bring the virtual machine back online using
 	```
-	    vagrant up
+	 vagrant up
 	```
 3. log into it using `vagrant up` to Successfully logged into the virtual machine
 	```
-	    vagrant ssh
+	 vagrant ssh
 	```
 
  4. download `newsdata.sql` file.
