@@ -112,7 +112,7 @@ To successfully run the `report.py` file in the repository we need to create vie
     ```
     ```
     create view most_errors as
-        select to_char(current_timestamp,'Month DD, YYYY') as day, perc_error 
+        select to_char(day,'Month DD, YYYY') as day, perc_error 
         from avg_error
         where perc_error > 1.00
         order by perc_error;
