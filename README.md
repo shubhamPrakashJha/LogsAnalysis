@@ -101,22 +101,27 @@ Views cant be created by two methods: i.e. automatic or manually
     
     1. To create popular_artist view for second question.
         ```sql
-        create view popular_articles as
-    	    select title, count(*) as views
-    	    from log join articles
-    	    on log.path = concat('/article/',articles.slug) 
-    	    group by title, status 
-    	    order by status, views desc
-    	    limit 3;
+        create view popular_articles_fast as
+        SELECT title, views
+        FROM articles
+        JOIN
+            (SELECT path, count(*) AS views
+             FROM log
+             GROUP BY log.path) AS log
+        ON log.path = concat('/article/', articles.slug)
+        ORDER BY views DESC
+        LIMIT 3;
         ```
     2. To create popular_articles view for first question.
         ```sql
-        create view popular_authors as
-    	    select authors.name, count(*) as views
-    	    from articles,authors,log
-    	    where articles.author = authors.id and log.path = concat('/article/',articles.slug)
-    	    group by authors.name, status
-    	    order by status, views desc;
+        create view popular_authors_fast as
+        select authors.name, sum(views) as view
+        from articles,authors,(SELECT path, count(*) AS views
+                                FROM log
+                                GROUP BY log.path) AS log
+        where articles.author = authors.id and log.path = concat('/article/',articles.slug)
+        GROUP BY authors.name
+        order by view desc;
         ```
     3. To create most_errors view for third question.
         ```sql

@@ -37,7 +37,7 @@ def execute_query(query):
 
 def print_top_articles():
     """Prints out the top 3 articles of all time."""
-    query = "select * from popular_articles"
+    query = "select * from popular_articles_fast"
     results = execute_query(query)
 
     print("\n1. The most popular three articles of all time are:\n")
@@ -48,7 +48,7 @@ def print_top_articles():
 
 def print_top_authors():
     """Prints a list of authors ranked by article views."""
-    query = "select * from popular_authors"
+    query = "select * from popular_authors_fast"
     results = execute_query(query)
 
     print("\n\n2. The most popular authors of all time are:\n")

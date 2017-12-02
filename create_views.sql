@@ -6,12 +6,32 @@ create view popular_articles as
     order by status, views desc
     limit 3;
 
+create view popular_articles_fast as
+    SELECT title, views
+    FROM articles
+    JOIN
+        (SELECT path, count(*) AS views
+         FROM log
+         GROUP BY log.path) AS log
+    ON log.path = concat('/article/', articles.slug)
+    ORDER BY views DESC
+    LIMIT 3;
+
 create view popular_authors as
     select authors.name, count(*) as views
     from articles,authors,log
     where articles.author = authors.id and log.path = concat('/article/',articles.slug)
     group by authors.name, status
     order by status, views desc;
+
+create view popular_authors_fast as
+    select authors.name, sum(views) as view
+    from articles,authors,(SELECT path, count(*) AS views
+                            FROM log
+                            GROUP BY log.path) AS log
+    where articles.author = authors.id and log.path = concat('/article/',articles.slug)
+    GROUP BY authors.name
+    order by view desc;
 
 create view all_error as
     select cast(time as date) as day, count(*) as error
