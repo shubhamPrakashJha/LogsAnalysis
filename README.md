@@ -84,8 +84,8 @@ To successfully run the `report.py` file in the repository we need to create vie
 	    select authors.name, count(*) as views
 	    from articles,authors,log
 	    where articles.author = authors.id and log.path = concat('/article/',articles.slug)
-	    group by authors.name
-	    order by views desc;
+	    group by authors.name, status
+	    order by status, views desc;
 
     ```
     3. to create most_errors view for third question.
