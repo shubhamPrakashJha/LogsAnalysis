@@ -73,8 +73,8 @@ To successfully run the `report.py` file in the repository we need to create vie
 	    select title, count(*) as views
 	    from log join articles
 	    on log.path = concat('/article/',articles.slug) 
-	    group by title 
-	    order by views desc
+	    group by title, status 
+	    order by status, views desc
 	    limit 3;
 
     ```
