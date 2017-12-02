@@ -56,7 +56,7 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 	 cd /vagrant
 	```
 
-8. load the data from `newsdata.sql` to `news` _database_ and cd into the vagrant directory using the command
+8. load the data from `newsdata.sql` to `news` _database_.
 	```commandline
 	 psql -d news -f newsdata.sql
 	```
@@ -76,7 +76,23 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 ## INITIALIZATION:  create views
 To successfully run the `report.py` file in the repository we need to create views in the `news` **database**.
 
-#### To recreate the views:
+### To recreate the views:
+Views cant be created by two methods: i.e. automatic or manually
+
+##### Method 1: automatic
+1. find `create_views.sql` file inside the LogsAnalysis Directory.
+
+2. navigate to LogsAanalysis directory in command line
+    ```commandline
+        cd /vagrant/LogsAnalysis
+    ```
+
+3. Create views with `newsdata.sql` in `news` _database_.
+	```commandline
+	 psql -d news -f create_views.sql
+    ```
+
+##### Method 2: manually
 - Select 'news' database in psql using
     ```commandline
     psql news
