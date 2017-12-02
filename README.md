@@ -17,7 +17,7 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 
 ## HOW TO SETUP DATABASE
 
-1. To install vagrant you can check below link. This will give you the PostgreSQL database and support software needed for this project
+1. Install vagrant, to install you can check the below link. This will give you the PostgreSQL database and support software needed for this project
 
 	[Instructions to install the vagrant virtual machine](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
