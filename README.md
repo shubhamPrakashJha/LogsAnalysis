@@ -168,9 +168,9 @@ env: python\r: No such file or directory
 ```
 It is actually caused by irregular line-break ending of the reportmodular.py file.
 
-This can be easily fixed by using a nifty utility called dos2unix
+This can be easily fixed by using a nifty utility called `dos2unix`
 
-Since I’m using `Ubuntu` with HomeBrew installed, I can do the following:
+Since I’m using `Ubuntu`, I can do the following:
 ```commandline
 $ sudo apt install dos2unix
 $ dos2unix manage.py
