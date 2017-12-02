@@ -11,16 +11,25 @@ def db_connect():
     """
     global cursor
     # database name
-    dbname = "news"
+    dbname = "new"
     # connect to database
-    connection = psycopg2.connect(database=dbname)
+    try:
+        connection = psycopg2.connect(database=dbname)
+    except psycopg2.Error:
+        print("-"*29 + "warning" + "-"*29 +
+              "\n can not find news database,"
+              " database might not set up properly."
+              "\n\n Please refer \'how to setup database\'"
+              " in README file for help.\n")
+        exit()
     # create cursor
     cursor = connection.cursor()
 
 
 def execute_query(query):
-    """execute_query takes an SQL query as a parameter. 
-            Executes the query and returns the results as a list of tuples.
+    """
+    execute_query takes an SQL query as a parameter.
+    Executes the query and returns the results as a list of tuples.
     """
     cursor.execute(query)
     result = cursor.fetchall()
@@ -34,7 +43,8 @@ def print_top_articles():
 
     print("\n1. The most popular three articles of all time are:\n")
     for i in range(3):
-        print('\t{}. "{}" -- {} views'.format(i + 1, results[i][0], results[i][1]))
+        print('\t{}. "{}" -- {} views'
+              .format(i + 1, results[i][0], results[i][1]))
 
 
 def print_top_authors():
@@ -44,17 +54,24 @@ def print_top_authors():
 
     print("\n\n2. The most popular authors of all time are:\n")
     for i in range(len(results)):
-        print('\t{}. {} -- {} views'.format(i + 1, results[i][0], results[i][1]))
+        print('\t{}. {} -- {} views'
+              .format(i + 1, results[i][0], results[i][1]))
 
 
 def print_errors_over_one():
-    """Prints out the days where more than 1% of logged access requests were errors."""
+    """
+    Prints out the days,
+    where more than 1% of logged access requests were errors.
+    """
     query = "select * from most_errors"
     results = execute_query(query)
 
-    print("\n\n3. Days on which more than 1% of the requests lead to error are:\n")
+    print("\n\n3. Days on which more than 1% of "
+          "the requests lead to error are:\n")
     for i in range(len(results)):
-        print('\t{}. {} -- {}% error'.format(i + 1, results[i][0], results[i][1]))
+        print('\t{}. {} -- {}% error'
+              .format(i + 1, results[i][0], results[i][1]))
+
 
 if __name__ == '__main__':
     # decorator at the beginning of report
