@@ -19,43 +19,43 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 
 1. To install vagrant you can check below link. This will give you the PostgreSQL database and support software needed for this project
 
-[Instructions to install the vagrant virtual machine](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+	[Instructions to install the vagrant virtual machine](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
 2. After installing vagrant, Bring the virtual machine back online using
-```
-    vagrant up
-```
+	```
+	    vagrant up
+	```
 3. log into it using `vagrant up` to Successfully logged into the virtual machine
-```
-    vagrant ssh
-```
+	```
+	    vagrant ssh
+	```
 
  4. download `newsdata.sql` file.
  
  
 
-[ download newsdata.sql file here](https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0)
+	[ download newsdata.sql file here](https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0)
 
-5. unzip this file and Put this file into the vagrant directory shared with your virtual machine
+5. unzip this file and Put this file into the `vagrant directory` shared with your virtual machine
 
 
 6. now cd into the vagrant directory
-```
- cd /vagrant
-```
+	```
+	 cd /vagrant
+	```
 
 7. use the command(use it only once)
-```
- psql -d news -f newsdata.sql
-```
+	```
+	 psql -d news -f newsdata.sql
+	```
 8. connect to postgreSQL using command(for rest of the time)
-```angular2html
- psql
-```
+	```angular2html
+	 psql
+	```
 9. select the news database using
-```angular2html
- \c news
-```
+	```angular2html
+	 \c news
+	```
 now you will be connected to the news database which have three tables i.e `authors`, `articles`,`log`.
 
 ## INITIALIZATION:  create views
