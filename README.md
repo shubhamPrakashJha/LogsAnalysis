@@ -55,6 +55,20 @@ A **Newspaper Site's** **_internal reporting tool_** that will use information f
 	```commandline
 	 cd /vagrant
 	```
+	
+8. create `news` database using following commands
+   - Enter into psql
+    ```commandline
+    psql
+    ```
+    - create news database 
+    ```postgresql
+     CREATE DATABASE news ;
+    ```
+    - move out of psql
+    ```commandline
+    ctrl + D
+    ```
 
 8. load the data from `newsdata.sql` to `news` _database_.
 	```commandline
